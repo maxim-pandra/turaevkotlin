@@ -4,6 +4,7 @@ import com.example.maxim.turaevkotlin.api.RestAPI
 import com.example.maxim.turaevkotlin.commons.Artists
 import com.example.maxim.turaevkotlin.commons.ArtistsItem
 import rx.Observable
+import java.nio.charset.Charset
 
 class ArtistsManager(private val api: RestAPI = RestAPI()) {
 
@@ -14,8 +15,11 @@ class ArtistsManager(private val api: RestAPI = RestAPI()) {
             val response = callResponse.execute()
 
             if (response.isSuccessful) {
+
                 val dataResponse = response.body().map {
-                    ArtistsItem(it.id, it.name,
+                    ArtistsItem(
+                            it.id, String(
+                            it.name.toByteArray(Charset.forName("ISO-8859-1")), Charset.forName("UTF-8")),
                             it.cover)
                 }
                 val redditNews = Artists(
