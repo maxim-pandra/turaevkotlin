@@ -8,7 +8,7 @@ import com.example.maxim.turaevkotlin.commons.adapter.ViewType
 import com.example.maxim.turaevkotlin.commons.adapter.ViewTypeDelegateAdapter
 import com.example.maxim.turaevkotlin.commons.extensions.inflate
 import com.example.maxim.turaevkotlin.commons.extensions.loadImg
-import kotlinx.android.synthetic.main.news_item.view.*
+import kotlinx.android.synthetic.main.item_artist.view.*
 
 class ArtistsDelegateAdapter :ViewTypeDelegateAdapter {
     override fun onCreateViewHolder(parent: ViewGroup): RecyclerView.ViewHolder {
@@ -21,7 +21,7 @@ class ArtistsDelegateAdapter :ViewTypeDelegateAdapter {
     }
 
     class TurnsViewHolder(parent: ViewGroup) : RecyclerView.ViewHolder(
-            parent.inflate(R.layout.news_item)) {
+            parent.inflate(R.layout.item_artist)) {
 
         fun bind(item: ArtistsItem) = with(itemView) {
             img_thumbnail.loadImg(item.cover)

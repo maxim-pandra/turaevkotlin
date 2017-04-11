@@ -1,12 +1,16 @@
 package com.example.maxim.turaevkotlin.features.artists
 
+import com.example.maxim.turaevkotlin.api.ArtistsApi
 import com.example.maxim.turaevkotlin.api.RestAPI
 import com.example.maxim.turaevkotlin.commons.Artists
 import com.example.maxim.turaevkotlin.commons.ArtistsItem
 import rx.Observable
 import java.nio.charset.Charset
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class ArtistsManager(private val api: RestAPI = RestAPI()) {
+@Singleton
+class ArtistsManager @Inject constructor(private val api: ArtistsApi) {
 
     fun getNews(after: String, limit: String = "10"): Observable<Artists> {
         return Observable.create {
