@@ -24,7 +24,7 @@ class ArtistsDelegateAdapter :ViewTypeDelegateAdapter {
             parent.inflate(R.layout.item_artist)) {
 
         fun bind(item: ArtistsItem) = with(itemView) {
-            img_thumbnail.loadImg(item.cover)
+            artist_icon.loadImg(item.cover)
             description.text = item.name
         }
     }

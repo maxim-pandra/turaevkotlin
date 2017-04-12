@@ -1,7 +1,6 @@
 package com.example.maxim.turaevkotlin.features.artists
 
 import com.example.maxim.turaevkotlin.api.ArtistsApi
-import com.example.maxim.turaevkotlin.api.RestAPI
 import com.example.maxim.turaevkotlin.commons.Artists
 import com.example.maxim.turaevkotlin.commons.ArtistsItem
 import rx.Observable

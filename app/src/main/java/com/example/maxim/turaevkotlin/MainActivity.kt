@@ -23,13 +23,13 @@ class MainActivity : AppCompatActivity() {
 
     @SuppressLint("PrivateResource")
     fun addFragment(f: Fragment/*, cleanStack: Boolean = false*/) {
-        val ft = supportFragmentManager.beginTransaction();
+        val ft = supportFragmentManager.beginTransaction()
 //        if (cleanStack) {
 //            clearBackStack();
 //        }
-        ft.replace(R.id.activity_base_content, f);
-        ft.addToBackStack(null);
-        ft.commit();
+        ft.replace(R.id.activity_base_content, f)
+        ft.addToBackStack(null)
+        ft.commit()
     }
 
 //    fun clearBackStack() {

@@ -9,13 +9,14 @@
     <!-- Left Thumbnail image -->
 
     <ImageView
-        android:id="@+id/img_thumbnail"
+        android:id="@+id/artist_icon"
         android:layout_width="50dip"
         android:layout_height="50dip"
         android:layout_marginBottom="5dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="10dp"
+        android:contentDescription="@string/cd_artist_icon" />
 
     <!-- Description -->
 

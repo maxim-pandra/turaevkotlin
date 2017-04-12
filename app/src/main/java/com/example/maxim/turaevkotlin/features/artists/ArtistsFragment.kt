@@ -1,21 +1,19 @@
 package com.example.maxim.turaevkotlin.features.artists
 
-import android.content.Context
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.widget.LinearLayoutManager
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.maxim.turaevkotlin.DaggerApplication
 import com.example.maxim.turaevkotlin.R
-import com.example.maxim.turaevkotlin.commons.InfiniteScrollListener
 import com.example.maxim.turaevkotlin.commons.Artists
+import com.example.maxim.turaevkotlin.commons.InfiniteScrollListener
 import com.example.maxim.turaevkotlin.commons.RxBaseFragment
 import com.example.maxim.turaevkotlin.commons.extensions.inflate
 import com.example.maxim.turaevkotlin.features.artists.adapter.ArtistsAdapter
-import kotlinx.android.synthetic.main.list_fragment.*
+import kotlinx.android.synthetic.main.artists_list_fragment.*
 import rx.android.schedulers.AndroidSchedulers
 import rx.schedulers.Schedulers
 import javax.inject.Inject
@@ -40,7 +38,7 @@ class ArtistsFragment : RxBaseFragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return container?.inflate(R.layout.list_fragment)
+        return container?.inflate(R.layout.artists_list_fragment)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -73,8 +71,7 @@ class ArtistsFragment : RxBaseFragment() {
     }
 
     private fun requestNews() {
-        Log.d("DVSVSDVDS", "context is"+context)
-        val subscription = artistsManager.getNews(offset.toString() ?: "0")
+        val subscription = artistsManager.getNews(offset.toString())
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(

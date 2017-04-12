@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">TuraevKotlin</string>
     <string name="action_settings">Settings</string>
+
+    <!--accessibility-->
+    <string name="cd_artist_icon">small icon</string>
 </resources>

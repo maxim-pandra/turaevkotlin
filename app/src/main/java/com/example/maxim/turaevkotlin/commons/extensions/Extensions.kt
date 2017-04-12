@@ -12,10 +12,6 @@ import android.widget.ImageView
 import com.example.maxim.turaevkotlin.R
 import com.squareup.picasso.Picasso
 
-/**
- * Created by maxim on 4/9/2017.
- */
-
 fun ViewGroup.inflate(layoutId: Int, attachToRoot: Boolean = false): View {
     return LayoutInflater.from(context).inflate(layoutId, this, attachToRoot)
 }

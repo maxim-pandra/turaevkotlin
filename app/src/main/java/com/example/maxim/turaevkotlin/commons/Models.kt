@@ -6,9 +6,6 @@ import com.example.maxim.turaevkotlin.commons.adapter.AdapterConstants
 import com.example.maxim.turaevkotlin.commons.adapter.ViewType
 import com.example.maxim.turaevkotlin.commons.extensions.createParcel
 
-/**
- * Created by maxim on 4/9/2017.
- */
 data class ArtistsItem(
         val id: Long,
         val name: String,

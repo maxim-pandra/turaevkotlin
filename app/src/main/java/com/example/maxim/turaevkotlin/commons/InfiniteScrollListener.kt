@@ -1,13 +1,9 @@
 package com.example.maxim.turaevkotlin.commons
 
-import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 
-/**
- * Created by maxim on 4/9/2017.
- */
 class InfiniteScrollListener (
     val func: () -> Unit,
     val layoutManager: LinearLayoutManager) : RecyclerView.OnScrollListener() {
@@ -23,22 +19,22 @@ class InfiniteScrollListener (
         super.onScrolled(recyclerView, dx, dy)
 
         if (dy > 0) {
-            visibleItemCount = recyclerView.childCount;
-            totalItemCount = layoutManager.itemCount;
-            firstVisibleItem = layoutManager.findFirstVisibleItemPosition();
+            visibleItemCount = recyclerView.childCount
+            totalItemCount = layoutManager.itemCount
+            firstVisibleItem = layoutManager.findFirstVisibleItemPosition()
 
             if (loading) {
                 if (totalItemCount > previousTotal) {
-                    loading = false;
-                    previousTotal = totalItemCount;
+                    loading = false
+                    previousTotal = totalItemCount
                 }
             }
             if (!loading && (totalItemCount - visibleItemCount)
                     <= (firstVisibleItem + visibleThreshold)) {
                 // End has been reached
-                Log.i("InfiniteScrollListener", "End reached");
+                Log.i("InfiniteScrollListener", "End reached")
                 func()
-                loading = true;
+                loading = true
             }
         }
     }
